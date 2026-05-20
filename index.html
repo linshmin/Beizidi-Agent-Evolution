@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蓓姿媞最強代理商養成計畫</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --blue: #2563a8;
+    --light-blue: #dbeafe;
+    --accent: #c0392b;
+    --accent-light: #fde8e8;
+    --gold: #b5892a;
+    --gold-light: #fef3cd;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --bg: #f8f9fb;
+    --white: #ffffff;
+    --border: #cbd5e1;
+    --page-width: 210mm;
+    --page-height: 297mm;
+    --margin: 18mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #e8ecf0;
+    color: var(--text);
+    font-size: 10pt;
+    line-height: 1.7;
+  }
+
+  /* ── Page Container ── */
+  .page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    background: var(--white);
+    margin: 12px auto;
+    padding: var(--margin);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+
+  /* ── Page Header Bar ── */
+  .page-header-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 60%, var(--gold) 100%);
+  }
+
+  .page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: var(--margin);
+    right: var(--margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 4px;
+  }
+
+  /* ══════════════════════════════
+     COVER PAGE
+  ══════════════════════════════ */
+  .cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: var(--page-height);
+    padding: var(--margin);
+    background: linear-gradient(160deg, #0f2744 0%, #1a3a5c 45%, #1e4976 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 40% at 20% 30%, rgba(37,99,168,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 70%, rgba(181,137,42,0.2) 0%, transparent 70%);
+  }
+  .cover-page .page-header-bar {
+    background: linear-gradient(90deg, rgba(181,137,42,0.8) 0%, rgba(255,215,100,0.9) 50%, rgba(181,137,42,0.8) 100%);
+  }
+  .cover-deco {
+    position: absolute;
+    width: 280px; height: 280px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50%;
+    top: -80px; right: -80px;
+  }
+  .cover-deco2 {
+    position: absolute;
+    width: 180px; height: 180px;
+    border: 1px solid rgba(181,137,42,0.2);
+    border-radius: 50%;
+    bottom: 60px; left: -60px;
+  }
+  .cover-tag {
+    position: relative;
+    font-size: 8pt;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 4px 16px;
+    border: 1px solid rgba(181,137,42,0.5);
+  }
+  .cover-title {
+    position: relative;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32pt;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .cover-title span { color: #f0c96e; }
+  .cover-subtitle {
+    position: relative;
+    font-size: 13pt;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+  .cover-divider {
+    position: relative;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 28px;
+  }
+  .cover-desc {
+    position: relative;
+    font-size: 10pt;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.9;
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
+  .cover-pills {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .cover-pill {
+    padding: 5px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.8);
+  }
+  .cover-bottom {
+    position: absolute;
+    bottom: var(--margin);
+    left: var(--margin);
+    right: var(--margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+  }
+  .cover-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ══════════════════════════════
+     CONTENT PAGES
+  ══════════════════════════════ */
+
+  /* Chapter Title */
+  .ch-number {
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .ch-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18pt;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .ch-rule {
+    height: 3px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 50%, transparent 100%);
+    margin-bottom: 14px;
+    border-radius: 2px;
+  }
+
+  /* Body text */
+  .body-text {
+    font-size: 9.5pt;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  /* Quote block */
+  .quote-block {
+    border-left: 4px solid var(--accent);
+    padding: 10px 16px;
+    margin: 14px 0;
+    background: var(--accent-light);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-block p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* Section heading */
+  .sec-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 14px 0 6px;
+    padding-left: 10px;
+    border-left: 3px solid var(--blue);
+  }
+  .sec-title-sm {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 10px 0 5px;
+  }
+
+  /* Bullet list */
+  .blist { list-style: none; padding: 0; margin: 0 0 8px; }
+  .blist li {
+    padding: 3px 0 3px 18px;
+    position: relative;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .blist li::before {
+    content: '●';
+    color: var(--blue);
+    font-size: 7pt;
+    position: absolute;
+    left: 2px;
+    top: 5px;
+  }
+
+  /* 3-col diff table */
+  .diff-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  .diff-table th {
+    padding: 9px 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+  }
+  .diff-table th:nth-child(1) { background: var(--navy); }
+  .diff-table th:nth-child(2) { background: var(--blue); }
+  .diff-table th:nth-child(3) { background: var(--accent); }
+  .diff-table td {
+    padding: 9px 12px;
+    font-size: 9pt;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .diff-table tr:nth-child(even) td { background: var(--bg); }
+
+  /* Tip card */
+  .tip-card {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .tip-label {
+    background: var(--navy);
+    color: white;
+    font-size: 8.5pt;
+    font-weight: 700;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    text-align: center;
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+  .tip-label.blue { background: var(--blue); }
+  .tip-label.gold { background: var(--gold); }
+  .tip-label.accent { background: var(--accent); }
+  .tip-body {
+    background: var(--light-blue);
+    padding: 10px 14px;
+    font-size: 9pt;
+    line-height: 1.7;
+    flex: 1;
+    color: var(--text);
+  }
+  .tip-body.gold-bg { background: var(--gold-light); }
+  .tip-body.accent-bg { background: var(--accent-light); }
+
+  /* KPI table */
+  .kpi-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9pt; }
+  .kpi-table thead th {
+    background: var(--navy);
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .kpi-table tbody td {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .kpi-table tbody tr:nth-child(even) td { background: var(--bg); }
+  .kpi-table tbody tr:nth-child(odd) td { background: var(--light-blue); }
+  .kpi-table .label-cell {
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ABC card grid */
+  .abc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 10px 0; }
+  .abc-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .abc-card-head {
+    padding: 9px 12px;
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: white;
+    text-align: center;
+  }
+  .abc-card-head.a { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+  .abc-card-head.b { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+  .abc-card-head.c { background: linear-gradient(135deg, #2d7a3a, #3a9c4a); }
+  .abc-card-body { padding: 10px 12px; background: var(--bg); }
+  .abc-card-body .mini-title { font-size: 8pt; font-weight: 700; color: var(--text-muted); margin: 6px 0 3px; text-transform: uppercase; letter-spacing: 1px; }
+  .abc-card-body ul { list-style: none; padding: 0; }
+  .abc-card-body ul li { font-size: 8.5pt; line-height: 1.6; padding-left: 12px; position: relative; }
+  .abc-card-body ul li::before { content: '›'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+  .abc-core { text-align: center; margin-top: 7px; padding: 5px 8px; background: rgba(37,99,168,0.08); border-radius: 4px; font-size: 8pt; font-weight: 700; color: var(--accent); font-style: italic; }
+
+  /* Rhythm table */
+  .rhythm-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9pt; }
+  .rhythm-table thead th {
+    background: var(--navy);
+    color: white;
+    padding: 8px 10px;
+    font-weight: 700;
+  }
+  .rhythm-table thead th:first-child { width: 80px; text-align: center; }
+  .rhythm-table tbody td {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .rhythm-table tbody tr:nth-child(odd) td { background: var(--light-blue); }
+  .rhythm-table tbody tr:nth-child(even) td { background: var(--bg); }
+  .rhythm-table .day-cell { text-align: center; font-weight: 700; color: var(--blue); }
+  .rhythm-table .script { font-size: 8.5pt; color: var(--text-muted); font-style: italic; }
+
+  /* Interaction 3-col */
+  .interact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 10px 0; }
+  .interact-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .interact-card-head {
+    background: var(--navy);
+    color: white;
+    padding: 8px 10px;
+    font-size: 9pt;
+    font-weight: 700;
+    text-align: center;
+  }
+  .interact-card-body {
+    padding: 10px 12px;
+    background: var(--bg);
+    font-size: 8.5pt;
+    line-height: 1.7;
+  }
+  .interact-badge {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--blue);
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+
+  /* Steps */
+  .steps-list { margin: 10px 0; }
+  .step-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .step-num {
+    min-width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-size: 9pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { font-size: 9.5pt; color: var(--navy); }
+  .step-content p { font-size: 9pt; color: var(--text-muted); margin-top: 1px; }
+
+  /* Compare end */
+  .final-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .final-card {
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+  }
+  .final-card.ordinary { background: #f1f5f9; border: 1px solid var(--border); }
+  .final-card.top { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+  .final-card .fc-label { font-size: 8pt; letter-spacing: 2px; margin-bottom: 6px; }
+  .final-card.ordinary .fc-label { color: var(--text-muted); }
+  .final-card.top .fc-label { color: rgba(255,255,255,0.6); }
+  .final-card .fc-value { font-family: 'Noto Serif TC', serif; font-size: 13pt; font-weight: 700; }
+  .final-card.ordinary .fc-value { color: #94a3b8; }
+  .final-card.top .fc-value { color: white; }
+
+  /* Daily action */
+  .daily-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 10px 0; }
+  .daily-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+  .daily-card-head {
+    background: var(--navy);
+    color: white;
+    padding: 7px 4px;
+    font-size: 10pt;
+    font-weight: 700;
+  }
+  .daily-card-body { padding: 8px 6px; background: var(--bg); }
+  .daily-goal { font-size: 9pt; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
+  .daily-desc { font-size: 7.5pt; color: var(--text-muted); line-height: 1.5; }
+
+  /* Social content */
+  .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+  .social-card {
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    align-items: flex-start;
+  }
+  .social-icon {
+    min-width: 32px; height: 32px;
+    border-radius: 6px;
+    background: var(--navy);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .social-card strong { font-size: 9pt; color: var(--navy); display: block; margin-bottom: 2px; }
+  .social-card p { font-size: 8pt; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── Print ── */
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+    }
+    .cover-page { page-break-after: always; }
+  }
+
+  /* small util */
+  .mt8 { margin-top: 8px; }
+  .mt12 { margin-top: 12px; }
+  .mb8 { margin-bottom: 8px; }
+  .row { display: flex; gap: 16px; }
+  .col { flex: 1; }
+  .note-box {
+    background: var(--gold-light);
+    border: 1px solid rgba(181,137,42,0.3);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 8.5pt;
+    color: #7a5c10;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1 — COVER
+════════════════════════════════════════════ -->
+<div class="page cover-page">
+  <div class="page-header-bar"></div>
+  <div class="cover-deco"></div>
+  <div class="cover-deco2"></div>
+
+  <div class="cover-tag">Beautee Agent Training Program</div>
+  <div class="cover-title">蓓姿媞<br><span>最強代理商</span><br>養成計畫</div>
+  <div class="cover-subtitle">從銷售高手 → 客戶經營高手 → 團隊領導人</div>
+  <div class="cover-divider"></div>
+  <div class="cover-desc">打造會成交、會經營、會追蹤、會複製<br>的頂尖代理商完整訓練系統</div>
+
+  <div class="cover-pills">
+    <div class="cover-pill">客戶開發</div>
+    <div class="cover-pill">ABC 分類</div>
+    <div class="cover-pill">黃金追蹤節奏</div>
+    <div class="cover-pill">轉介紹系統</div>
+    <div class="cover-pill">團隊複製</div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-logo">蓓姿媞 Beautee</div>
+    <div>代理商培訓系列 · 共 15 頁</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2 — CH1 差異 + CH2 五大能力
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 01</div>
+  <div class="ch-title">為什麼有些代理商越做越強？</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">在同樣的產品、同樣的市場環境下，為什麼有些代理商業績不斷成長，有些卻原地踏步？答案不在於「運氣好」，而在於<strong>思維與系統的差異</strong>。頂尖代理商的核心競爭力，在於他們不僅僅是「賣產品」，而是在每一個接觸點上，主動建立信任、創造價值、經營長期關係。</p>
+
+  <div class="sec-title">核心差異對照</div>
+  <table class="diff-table">
+    <thead>
+      <tr><th>普通代理商</th><th>厲害代理商</th><th>頂尖代理商</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>只會介紹產品</td><td>會經營客戶關係</td><td>建立客戶信任系統</td></tr>
+      <tr><td>有空才聯絡客戶</td><td>定期跟進追蹤</td><td>系統化節奏互動</td></tr>
+      <tr><td>靠衝動促成成交</td><td>善用話術輔助</td><td>讓客戶主動決定</td></tr>
+      <tr><td>業績靠自己撐</td><td>開始發展少量夥伴</td><td>複製成功模式給團隊</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quote-block mt8"><p>真正長久的事業，不是靠強迫成交，而是靠持續經營信任。</p></div>
+
+  <div class="sec-title mt12">第二章｜最強代理商的五大核心能力</div>
+  <p class="body-text">成為頂尖代理商，需要系統性地培養五大能力。這五大能力相互連結，缺一不可。當你把每一項能力都建立起來，業績自然會持續增長。</p>
+
+  <div class="tip-card"><div class="tip-label">能力一</div><div class="tip-body"><strong>客戶開發能力</strong>｜持續找到新名單、開拓新市場，讓業務管道永不枯竭。</div></div>
+  <div class="tip-card"><div class="tip-label blue">能力二</div><div class="tip-body"><strong>客戶資料管理能力</strong>｜系統化記錄每位客戶的資訊、需求與跟進狀況，讓每次互動都有依據。</div></div>
+  <div class="tip-card"><div class="tip-label gold">能力三</div><div class="tip-body gold-bg"><strong>客戶追蹤互動能力</strong>｜在正確的時間點，用正確的方式關心客戶，維持並加深關係。</div></div>
+  <div class="tip-card"><div class="tip-label blue">能力四</div><div class="tip-body"><strong>轉介紹能力</strong>｜讓滿意的客戶主動幫你介紹新客戶，創造口碑傳播的良性循環。</div></div>
+  <div class="tip-card"><div class="tip-label accent">能力五</div><div class="tip-body accent-bg"><strong>團隊複製能力</strong>｜把成功經驗系統化，傳授給團隊夥伴，放大整體業績。</div></div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>2 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3 — CH3 客戶開發系統
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 03</div>
+  <div class="ch-title">客戶開發系統</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">「客戶從哪裡來？」是每位代理商最常問的問題。答案是：<strong>無處不在</strong>。關鍵在於，你是否有意識地去開發，並且建立穩定的來源管道。</p>
+
+  <div class="sec-title">六大客戶來源</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;">
+    <div class="tip-card"><div class="tip-label" style="min-width:72px;">陌生開發</div><div class="tip-body">在生活圈、社群或活動中主動認識新朋友，從零建立關係。</div></div>
+    <div class="tip-card"><div class="tip-label blue" style="min-width:72px;">店家合作</div><div class="tip-body">與美容店、健身房、診所等異業夥伴合作，互相引流。</div></div>
+    <div class="tip-card"><div class="tip-label gold" style="min-width:72px;">BNI／商會</div><div class="tip-body gold-bg">加入商業人脈組織，建立穩定的轉介紹網絡。</div></div>
+    <div class="tip-card"><div class="tip-label blue" style="min-width:72px;">社群經營</div><div class="tip-body">透過 LINE、IG、FB 等平台，讓潛在客戶主動找上你。</div></div>
+    <div class="tip-card"><div class="tip-label" style="min-width:72px;">親友市場</div><div class="tip-body">從最熟悉的人開始，讓他們成為你最有力的口碑見證者。</div></div>
+    <div class="tip-card"><div class="tip-label accent" style="min-width:72px;">客戶轉介</div><div class="tip-body accent-bg">最高品質的來源，由滿意客戶主動推薦，成交率最高。</div></div>
+  </div>
+
+  <div class="sec-title mt12">每日基本 KPI</div>
+  <p class="body-text">開發客戶不能靠心情，要靠紀律。以下是每日最基本的行動指標：</p>
+
+  <table class="kpi-table">
+    <thead><tr><th style="width:30%;">每日項目</th><th style="width:20%;">目標量</th><th>執行說明</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">新增名單</td><td style="text-align:center;font-weight:700;color:var(--accent);">3～5 位</td><td>擴大人脈庫，讓每天都有新的可能</td></tr>
+      <tr><td class="label-cell">新增 LINE 好友</td><td style="text-align:center;font-weight:700;color:var(--accent);">2 位</td><td>轉化陌生人為可互動的潛在客戶</td></tr>
+      <tr><td class="label-cell">主動聊天</td><td style="text-align:center;font-weight:700;color:var(--accent);">30 分鐘</td><td>保持關係溫度，讓客戶記得你</td></tr>
+      <tr><td class="label-cell">發見證文</td><td style="text-align:center;font-weight:700;color:var(--accent);">1 篇</td><td>在朋友圈建立專業形象與信任感</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">💡 <strong>行動小提醒：</strong>每天晚上花 5 分鐘確認今日 KPI 是否達成，隔天早上規劃當日行動。量的累積才能帶來質的突破。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>3 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4 — CH4 客戶資料管理系統
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 04</div>
+  <div class="ch-title">建立客戶資料管理系統</div>
+  <div class="ch-rule"></div>
+
+  <div class="quote-block"><p>沒有管理，就沒有成交累積。</p></div>
+
+  <p class="body-text">很多代理商在開發客戶上非常努力，卻因為沒有系統化記錄，導致大量潛在客戶流失。建立客戶資料管理系統，讓你每次跟進都精準有效，把每一筆關係累積成業績。</p>
+
+  <div class="sec-title mt12">客戶資料欄位說明</div>
+
+  <div class="row mt8">
+    <div class="col">
+      <div class="sec-title-sm">一、基本資料</div>
+      <ul class="blist">
+        <li><strong>姓名</strong>｜建立個人化互動的基礎</li>
+        <li><strong>年齡</strong>｜了解生命階段與需求</li>
+        <li><strong>職業</strong>｜判斷痛點與消費能力</li>
+        <li><strong>LINE ID</strong>｜主要聯繫管道</li>
+        <li><strong>居住區域</strong>｜安排面訪與體驗的依據</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="sec-title-sm">二、身體需求（核心銷售依據）</div>
+      <ul class="blist">
+        <li>肩頸痠痛</li>
+        <li>骨盆問題</li>
+        <li>睡眠問題</li>
+        <li>久坐問題</li>
+        <li>體態困擾</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="sec-title-sm">三、客戶興趣（延伸開發方向）</div>
+      <ul class="blist">
+        <li>美容</li>
+        <li>健康</li>
+        <li>創業</li>
+        <li>被動收入</li>
+        <li>團購合作</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">資料記錄重點提示</div>
+  <table class="kpi-table mt8">
+    <thead><tr><th>記錄項目</th><th>更新時機</th><th>用途說明</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">首次接觸印象</td><td>認識當天</td><td>記下初見面的話題、對方的個性、關注點</td></tr>
+      <tr><td class="label-cell">需求痛點</td><td>每次對話後</td><td>累積對方的身體狀況、生活困擾，做為後續切入依據</td></tr>
+      <tr><td class="label-cell">互動記錄</td><td>每次追蹤後</td><td>記下聊了什麼、對方的反應，下次接觸更自然</td></tr>
+      <tr><td class="label-cell">ABC 分級</td><td>每月評估一次</td><td>依購買意願動態調整，確保追蹤精力分配合理</td></tr>
+      <tr><td class="label-cell">成交與回購</td><td>成交後即時</td><td>記錄購買產品、滿意度、延伸需求與家庭成員狀況</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">📌 <strong>工具建議：</strong>可使用 Excel 表格、Notion 資料庫或 LINE 筆記，依照個人習慣選擇，重點是「持續更新、定期回顧」。每週花 10 分鐘整理一次客戶資料，讓每次跟進都有依據。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>4 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5 — CH5 ABC 客戶分類
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 05</div>
+  <div class="ch-title">ABC 客戶分類系統</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">不同客戶處於不同的購買階段，用同樣的方式對待所有人只會事倍功半。學會分類，才能把精力放在最有效的地方，讓每一份努力都創造最大價值。</p>
+
+  <div class="abc-grid mt8">
+    <!-- A 級 -->
+    <div class="abc-card">
+      <div class="abc-card-head a">🔴 A 級客戶｜立即成交型</div>
+      <div class="abc-card-body">
+        <div class="mini-title">特徵辨識</div>
+        <ul>
+          <li>有明顯需求，主動詢問價格</li>
+          <li>願意體驗，回覆速度快</li>
+          <li>對產品表現出高度興趣</li>
+        </ul>
+        <div class="mini-title">追蹤方式</div>
+        <ul>
+          <li>48 小時內持續互動</li>
+          <li>快速安排體驗或 AI 檢測</li>
+          <li>提供真實見證案例</li>
+          <li>建立立即行動感</li>
+        </ul>
+        <div class="abc-core">縮短成交時間</div>
+      </div>
+    </div>
+    <!-- B 級 -->
+    <div class="abc-card">
+      <div class="abc-card-head b">🔵 B 級客戶｜觀察培養型</div>
+      <div class="abc-card-body">
+        <div class="mini-title">特徵辨識</div>
+        <ul>
+          <li>有興趣但猶豫</li>
+          <li>常說「再看看」</li>
+          <li>擔心價格，還在比較</li>
+        </ul>
+        <div class="mini-title">追蹤方式</div>
+        <ul>
+          <li>每週固定關心</li>
+          <li>分享改善案例</li>
+          <li>分享健康知識</li>
+          <li>增加信任感</li>
+        </ul>
+        <div class="abc-core">先建立信任再成交</div>
+      </div>
+    </div>
+    <!-- C 級 -->
+    <div class="abc-card">
+      <div class="abc-card-head c">🟢 C 級客戶｜長期經營型</div>
+      <div class="abc-card-body">
+        <div class="mini-title">特徵辨識</div>
+        <ul>
+          <li>暫時沒需求</li>
+          <li>沒有急迫性</li>
+          <li>還不了解產品</li>
+        </ul>
+        <div class="mini-title">追蹤方式</div>
+        <ul>
+          <li>節日關心</li>
+          <li>限動互動、按讚</li>
+          <li>分享生活內容</li>
+        </ul>
+        <div class="abc-core">先成為朋友</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">分類升級機制</div>
+  <p class="body-text">客戶的分級不是固定的，隨著你的持續經營，C 級可以升為 B 級，B 級可以升為 A 級。每個月重新評估一次客戶等級，動態調整追蹤策略。</p>
+
+  <table class="kpi-table">
+    <thead><tr><th>升級觸發點</th><th>從</th><th>升至</th><th>對應行動</th></tr></thead>
+    <tbody>
+      <tr><td>主動詢問價格或體驗</td><td style="text-align:center;">C</td><td style="text-align:center;font-weight:700;color:var(--blue);">B</td><td>立即分享案例，安排體驗邀約</td></tr>
+      <tr><td>表示近期有需求或困擾加劇</td><td style="text-align:center;">B</td><td style="text-align:center;font-weight:700;color:var(--accent);">A</td><td>48 小時內密集互動，促成體驗</td></tr>
+      <tr><td>家人出現相關需求</td><td style="text-align:center;">C/B</td><td style="text-align:center;font-weight:700;color:var(--accent);">A</td><td>延伸關懷家庭成員，擴大服務範圍</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>5 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 6 — CH6 三大互動模式
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 06</div>
+  <div class="ch-title">客戶追蹤互動技巧</div>
+  <div class="ch-rule"></div>
+
+  <div class="quote-block"><p>客戶不是追來的，而是經營出來的。</p></div>
+
+  <p class="body-text">許多代理商的追蹤方式都是「有空才聯絡」或「想到才關心」，這樣的關係很容易斷掉。頂尖代理商的差別在於：他們有系統、有節奏地互動，讓客戶持續感受到溫度。</p>
+
+  <div class="sec-title mt12">三大互動模式</div>
+
+  <div class="interact-grid mt8">
+    <div class="interact-card">
+      <div class="interact-card-head">❤️ 關心型互動</div>
+      <div class="interact-card-body">
+        <div class="interact-badge">建立溫度</div>
+        <p>讓客戶感受到你真的在意他，而不只是要賺他的錢。</p>
+        <br>
+        <strong style="font-size:8pt;color:var(--navy);">話術範例：</strong>
+        <ul class="blist" style="margin-top:4px;">
+          <li>最近肩頸有比較舒服嗎？</li>
+          <li>最近工作是不是很累？天氣變化大，要多注意身體喔！</li>
+          <li>最近睡眠如何？上次說的方法有試試看嗎？</li>
+        </ul>
+      </div>
+    </div>
+    <div class="interact-card">
+      <div class="interact-card-head">📚 價值型互動</div>
+      <div class="interact-card-body">
+        <div class="interact-badge">建立專業信任</div>
+        <p>定期分享對客戶有用的資訊，讓你成為他心目中的「健康顧問」。</p>
+        <br>
+        <strong style="font-size:8pt;color:var(--navy);">分享內容：</strong>
+        <ul class="blist" style="margin-top:4px;">
+          <li>健康知識與姿勢觀念</li>
+          <li>AI 姿態檢測案例分享</li>
+          <li>客戶使用後的真實改善見證</li>
+        </ul>
+      </div>
+    </div>
+    <div class="interact-card">
+      <div class="interact-card-head">🌟 生活型互動</div>
+      <div class="interact-card-body">
+        <div class="interact-badge">建立熟悉感</div>
+        <p>讓客戶把你當成真正的朋友，不只是代理商。</p>
+        <br>
+        <strong style="font-size:8pt;color:var(--navy);">互動方式：</strong>
+        <ul class="blist" style="margin-top:4px;">
+          <li>回覆客戶限動並給予真誠留言</li>
+          <li>生日、節日主動祝福</li>
+          <li>分享你的日常生活與成長</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">互動頻率建議</div>
+  <table class="kpi-table">
+    <thead><tr><th>客戶等級</th><th>關心型</th><th>價值型</th><th>生活型</th><th>總互動頻率</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell" style="color:var(--accent);">A 級</td><td style="text-align:center;">每 1～2 天</td><td style="text-align:center;">每週</td><td style="text-align:center;">每 2～3 天</td><td style="text-align:center;font-weight:700;">高頻密集</td></tr>
+      <tr><td class="label-cell" style="color:var(--blue);">B 級</td><td style="text-align:center;">每週</td><td style="text-align:center;">每週</td><td style="text-align:center;">每週</td><td style="text-align:center;font-weight:700;">穩定規律</td></tr>
+      <tr><td class="label-cell" style="color:#2d7a3a;">C 級</td><td style="text-align:center;">每 2～4 週</td><td style="text-align:center;">不定期</td><td style="text-align:center;">節日或限動</td><td style="text-align:center;font-weight:700;">維持存在感</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>6 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 7 — CH7 黃金追蹤節奏
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 07</div>
+  <div class="ch-title">黃金追蹤節奏</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">互動要有節奏，才能在不打擾客戶的前提下，持續推進關係。以下是最有效的黃金追蹤節奏，可直接複製使用，讓每一次接觸都恰到好處。</p>
+
+  <table class="rhythm-table mt8">
+    <thead>
+      <tr><th style="text-align:center;">時間點</th><th>行動重點</th><th>話術範例</th><th style="width:120px;">目的</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="day-cell">第 1 天</td>
+        <td><strong>聊天建立信任</strong></td>
+        <td class="script">「認識你很開心！你平常工作是什麼類型的呢？久坐還是需要到處跑？」</td>
+        <td>開啟關係</td>
+      </tr>
+      <tr>
+        <td class="day-cell">第 3 天</td>
+        <td><strong>分享案例與知識</strong></td>
+        <td class="script">「分享一個上班族改善肩頸的案例給你看，跟你的情況很像，你有時間看一下嗎？」</td>
+        <td>建立專業感</td>
+      </tr>
+      <tr>
+        <td class="day-cell">第 7 天</td>
+        <td><strong>關心狀況與需求</strong></td>
+        <td class="script">「最近身體狀況如何？你上次說的那個問題有改善嗎？工作上有沒有比較輕鬆一點？」</td>
+        <td>深化關係</td>
+      </tr>
+      <tr>
+        <td class="day-cell">第 14 天</td>
+        <td><strong>邀請體驗／AI 檢測</strong></td>
+        <td class="script">「我們最近有免費的 AI 姿態檢測活動，讓你更清楚自己的身體狀況，你要不要來體驗看看？」</td>
+        <td>推進行動</td>
+      </tr>
+      <tr>
+        <td class="day-cell">第 30 天</td>
+        <td><strong>追蹤改善與延伸</strong></td>
+        <td class="script">「這個月下來有什麼感受？身體有比較舒適嗎？你家人有沒有類似的困擾？」</td>
+        <td>延伸服務</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title mt12">節奏執行原則</div>
+  <ul class="blist">
+    <li><strong>自然不做作：</strong>每次互動都要讓客戶覺得你是真心關心，而非例行公事式的推銷。</li>
+    <li><strong>依反應調整：</strong>客戶回應熱絡時可縮短節奏間隔；沉默時維持輕量接觸即可。</li>
+    <li><strong>每次都記錄：</strong>每次互動後更新客戶資料，記下對方反應，讓下一次接觸更有溫度。</li>
+    <li><strong>不要消失：</strong>即使客戶暫時沒有需求，也要維持存在感，讓他想到需求時第一個想到你。</li>
+  </ul>
+
+  <div class="note-box">💡 <strong>實戰提醒：</strong>追蹤節奏不是「倒數計時」，而是「感受溫度」。當客戶主動回覆或表現出更多興趣，代表可以加速推進；若對方忙碌，就放慢節奏，不要強迫。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>7 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 8 — CH8 高成交互動技巧
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 08</div>
+  <div class="ch-title">高成交客戶互動技巧</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">成交不是「說服」客戶買東西，而是幫助客戶找到「真正需要的解決方案」。以下四個技巧，能幫助你大幅提升成交率，讓客戶主動做出購買決定。</p>
+
+  <div class="sec-title mt12">四大高成交技巧</div>
+
+  <div class="tip-card mt8"><div class="tip-label" style="min-width:90px;font-size:9pt;">技巧一<br>不急著賣</div><div class="tip-body">先聊天、先了解、先建立信任，讓對方感受到你是真的在關心他。很多代理商一見面就開始介紹產品，客戶會有防衛心。建立信任之後，產品介紹才會有效。</div></div>
+  <div class="tip-card"><div class="tip-label blue" style="min-width:90px;font-size:9pt;">技巧二<br>多問問題</div><div class="tip-body"><strong>問需求的話術：</strong>「你哪裡最不舒服？這個問題困擾你多久了？」「你的工作是不是需要久坐？大概每天坐幾個小時？」「睡眠品質怎麼樣？是難以入睡，還是容易中途醒來？」問問題是了解需求的最好方式，也讓客戶感覺被重視。</div></div>
+  <div class="tip-card"><div class="tip-label gold" style="min-width:90px;font-size:9pt;">技巧三<br>學會傾聽</div><div class="tip-body gold-bg">問完問題之後，最重要的是「真的聽」。不要急著給答案，讓客戶把話說完。<strong>客戶最需要的，不是推銷，而是被理解。</strong>當你真的理解了對方的問題，你給出的建議才會有說服力。</div></div>
+  <div class="tip-card"><div class="tip-label accent" style="min-width:90px;font-size:9pt;">技巧四<br>情緒價值</div><div class="tip-body accent-bg">客戶在決定購買之前，會先感受到三件事：<strong>被關心</strong>（你有沒有真心在乎他的狀況？）、<strong>被理解</strong>（你有沒有真正了解他的問題？）、<strong>被重視</strong>（你有沒有把他當成一個「人」，而不只是客戶？）當客戶感受到這三點，成交往往是水到渠成的事。</div></div>
+
+  <div class="quote-block mt12"><p>先理解，再解決。讓客戶感受到你真的懂他。</p></div>
+
+  <div class="sec-title mt12">成交關鍵流程</div>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>建立信任（第 1～7 天）</strong><p>透過關心型互動拉近距離，讓對方認識真實的你</p></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>挖掘需求（對話中）</strong><p>透過提問了解對方的痛點、生活狀況、家庭背景</p></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong>提供解方（第 7～14 天）</strong><p>分享對應的案例與知識，讓對方看見改善的可能性</p></div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong>邀請體驗（第 14 天）</strong><p>自然帶出 AI 姿態檢測或產品體驗邀約，降低門檻</p></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong>確認成交（體驗後）</strong><p>體驗後確認感受，配合見證案例與情緒價值促成決定</p></div></div>
+  </div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>8 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 9 — CH9 產品延伸技巧
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 09</div>
+  <div class="ch-title">產品延伸技巧</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">很多代理商只專注在「這位客戶」，卻忘了每一位客戶背後，都是一整個家庭。學會延伸問題，讓一個成交自然延伸為多個成交，這不是強迫推銷，而是真心關心整個家庭的健康。</p>
+
+  <div class="quote-block"><p>一位客戶＝一整個家庭<br><span style="font-size:9pt;font-weight:400;">一個滿意的客戶，背後可能有五個潛在客戶在等待你去關心。</span></p></div>
+
+  <div class="sec-title mt12">家庭延伸問題技巧</div>
+
+  <div class="tip-card mt8">
+    <div class="tip-label blue" style="min-width:80px;">延伸<br>先生</div>
+    <div class="tip-body">
+      <strong>話術：</strong>「你先生平常也是久坐工作嗎？他有沒有類似的腰痠問題？」<br>
+      <span style="font-size:8.5pt;color:var(--text-muted);">切入點：職業、久坐、腰痠、長期疲勞</span>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-label" style="min-width:80px;">延伸<br>小孩</div>
+    <div class="tip-body">
+      <strong>話術：</strong>「你小孩現在幾歲了？現在的孩子常用手機、電腦，有沒有發現他有點駝背的情況？」<br>
+      <span style="font-size:8.5pt;color:var(--text-muted);">切入點：3C 使用、駝背、脊椎側彎、姿勢問題</span>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-label gold" style="min-width:80px;">延伸<br>長輩</div>
+    <div class="tip-body gold-bg">
+      <strong>話術：</strong>「家中長輩身體狀況怎麼樣？年紀大了之後腰痠背痛是很常見的，有沒有在處理？」<br>
+      <span style="font-size:8.5pt;color:var(--text-muted);">切入點：腰痠、退化、骨質、行動不便</span>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">延伸思維的正確心態</div>
+  <ul class="blist">
+    <li><strong>出發點是關心，不是業績：</strong>當你真心關心對方的家人，對方能感受得到，也更願意幫你介紹。</li>
+    <li><strong>不強迫，只提供可能性：</strong>提出問題後讓對方自己發現需求，而不是直接推銷。</li>
+    <li><strong>記錄家庭成員狀況：</strong>把家人的資訊記入客戶資料，未來可以自然延伸關懷。</li>
+  </ul>
+
+  <div class="sec-title mt12">每次成交後的延伸清單</div>
+  <table class="kpi-table">
+    <thead><tr><th>延伸對象</th><th>切入問題</th><th>常見需求</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">配偶</td><td>工作性質？久坐嗎？腰背狀況？</td><td>腰痠、肩頸、疲勞</td></tr>
+      <tr><td class="label-cell">子女</td><td>幾歲？使用 3C 多嗎？有駝背嗎？</td><td>姿勢不良、脊椎問題</td></tr>
+      <tr><td class="label-cell">父母</td><td>幾歲？行動方便嗎？有不舒服的地方？</td><td>退化、腰痠、平衡</td></tr>
+      <tr><td class="label-cell">朋友</td><td>你身邊有沒有類似困擾的朋友？</td><td>各類痠痛、體態問題</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>9 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 10 — CH10 轉介紹系統
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 10</div>
+  <div class="ch-title">轉介紹系統</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">為什麼頂尖代理商不缺客戶？<strong>因為客戶會幫他介紹客戶。</strong>轉介紹是最高效、最高品質的客戶來源，成交率往往比陌生開發高出 3～5 倍。但轉介紹不會自動發生，需要系統化地推動。</p>
+
+  <div class="sec-title mt12">轉介紹五大步驟</div>
+  <div class="steps-list mt8">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>客戶先有感</strong>
+        <p>讓客戶真正體驗到產品效果，有了感受才有分享意願。沒有感受的客戶，不會主動介紹。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>主動關心</strong>
+        <p>持續追蹤使用情況，讓客戶感受到你的用心與負責。好的售後服務是轉介紹的最強觸發器。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>建立信任</strong>
+        <p>讓客戶對你這個人有信心，願意把朋友介紹給你。他們把朋友介紹過來，也是在用自己的信用背書。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>開口邀請</strong>
+        <p>在適當時機，主動、自然地請客戶幫忙介紹。不要害羞，直接說出來，大多數滿意的客戶都願意幫忙。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>建立見證循環</strong>
+        <p>讓被介紹來的新客戶也獲得好效果，形成良性循環。每一個成功案例都在為下一個轉介紹鋪路。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">轉介紹話術</div>
+  <div class="tip-card mt8">
+    <div class="tip-label blue" style="min-width:64px;">話術一</div>
+    <div class="tip-body">「如果你身邊也有人有肩頸或腰痠問題，我可以免費幫忙做 AI 姿態檢測，完全不用擔心，就是讓他了解自己的狀況。」</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-label" style="min-width:64px;">話術二</div>
+    <div class="tip-body">「其實很多上班族都有這類問題，你朋友如果有需要也可以來體驗看看，我不會強迫推銷，就是先讓他了解一下。」</div>
+  </div>
+
+  <div class="note-box mt8">💡 <strong>轉介紹的最佳時機：</strong>客戶剛反映產品有明顯改善時、客戶主動對你表示感謝時、你幫客戶解決了一個困擾問題之後。這三個時機開口，成功率最高。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>10 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 11 — CH11 社群朋友圈
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 11</div>
+  <div class="ch-title">社群與朋友圈經營</div>
+  <div class="ch-rule"></div>
+
+  <div class="quote-block"><p>成交前，客戶都會先觀察你。</p></div>
+
+  <p class="body-text">你的 LINE 限動、IG 貼文、FB 動態，就是你的「數位名片」。潛在客戶在決定是否信任你之前，往往已經悄悄觀察你的社群很久了。用心經營社群，讓每一個內容都在替你說話。</p>
+
+  <div class="sec-title mt12">每日五大內容方向</div>
+  <div class="social-grid mt8">
+    <div class="social-card">
+      <div class="social-icon">見</div>
+      <div>
+        <strong>客戶見證</strong>
+        <p>分享真實的客戶改善案例（需取得同意），配上前後對比或心得，最具說服力，是最有效的內容類型。</p>
+      </div>
+    </div>
+    <div class="social-card">
+      <div class="social-icon" style="background:var(--blue);">知</div>
+      <div>
+        <strong>健康知識</strong>
+        <p>分享與你產品相關的健康資訊、姿勢知識、生活習慣建議，持續建立你的專業形象與信任感。</p>
+      </div>
+    </div>
+    <div class="social-card">
+      <div class="social-icon" style="background:var(--gold);">學</div>
+      <div>
+        <strong>團隊學習</strong>
+        <p>分享你參加培訓、自我進修的過程，展現你持續成長的態度，吸引同頻的潛在夥伴。</p>
+      </div>
+    </div>
+    <div class="social-card">
+      <div class="social-icon" style="background:#2d7a3a;">生</div>
+      <div>
+        <strong>生活分享</strong>
+        <p>讓朋友圈看到真實的你：日常生活、飲食、運動，建立立體人格形象，讓人對你產生親近感。</p>
+      </div>
+    </div>
+    <div class="social-card" style="grid-column:span 2;">
+      <div class="social-icon" style="background:var(--accent);min-width:32px;">成</div>
+      <div>
+        <strong>成交故事</strong>
+        <p>分享業績成長的喜悅（不炫富）、幫助客戶解決問題的故事，讓關注者感受到你的真實成果，吸引想改變的潛在夥伴或客戶主動聯繫。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">社群經營黃金原則</div>
+  <ul class="blist">
+    <li><strong>真實：</strong>不要假裝完美，真實才能引起共鳴。偶爾分享困難與成長過程，反而更有說服力。</li>
+    <li><strong>持續：</strong>每天更新比偶爾大爆發更有效。穩定的輸出讓人覺得你是認真在經營的人。</li>
+    <li><strong>互動：</strong>主動回覆留言、回覆限動，建立雙向關係。你回應別人，別人才會回應你。</li>
+    <li><strong>一致：</strong>你的個人品牌形象要前後一致，讓人信任。健康、專業、真誠，是蓓姿媞代理商的品牌標籤。</li>
+  </ul>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>11 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 12 — CH12 每日成功行動表
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 12</div>
+  <div class="ch-title">每日成功行動表</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">成功不是靠偶爾的努力，而是靠每天的持續行動。把以下五件事養成習慣，你的業績就會穩定成長。每一天的小積累，都是下一個月業績的根基。</p>
+
+  <div class="daily-grid mt8">
+    <div class="daily-card">
+      <div class="daily-card-head">開發</div>
+      <div class="daily-card-body">
+        <div class="daily-goal">新增名單 3 人</div>
+        <div class="daily-desc">從社群、活動、轉介紹等管道主動認識新朋友，記錄到客戶資料表</div>
+      </div>
+    </div>
+    <div class="daily-card">
+      <div class="daily-card-head">追蹤</div>
+      <div class="daily-card-body">
+        <div class="daily-goal">關心 5 位客戶</div>
+        <div class="daily-desc">依 ABC 分類，對不同客戶用不同方式互動，維持關係溫度</div>
+      </div>
+    </div>
+    <div class="daily-card">
+      <div class="daily-card-head">學習</div>
+      <div class="daily-card-body">
+        <div class="daily-goal">30 分鐘知識</div>
+        <div class="daily-desc">了解產品知識、見證案例、競品差異，讓自己成為真正的專家</div>
+      </div>
+    </div>
+    <div class="daily-card">
+      <div class="daily-card-head">分享</div>
+      <div class="daily-card-body">
+        <div class="daily-goal">1 篇見證文</div>
+        <div class="daily-desc">在社群發布真實客戶案例或健康知識，持續建立品牌形象</div>
+      </div>
+    </div>
+    <div class="daily-card">
+      <div class="daily-card-head">行動</div>
+      <div class="daily-card-body">
+        <div class="daily-goal">安排體驗邀約</div>
+        <div class="daily-desc">主動邀請 A/B 級客戶來體驗或進行 AI 姿態檢測</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">每日執行自我檢核表</div>
+  <table class="kpi-table mt8">
+    <thead><tr><th style="width:30%;">項目</th><th style="width:20%;">今日目標</th><th style="width:20%;">完成狀況</th><th>備註與反思</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">新增名單</td><td style="text-align:center;">3 人</td><td style="text-align:center;">　　/ 3 人</td><td>今天認識了誰？從什麼管道？</td></tr>
+      <tr><td class="label-cell">關心客戶</td><td style="text-align:center;">5 位</td><td style="text-align:center;">　　/ 5 位</td><td>關心了哪些人？他們的反應如何？</td></tr>
+      <tr><td class="label-cell">學習時間</td><td style="text-align:center;">30 分鐘</td><td style="text-align:center;">　 分鐘</td><td>今天學到了什麼？可以分享給誰？</td></tr>
+      <tr><td class="label-cell">社群分享</td><td style="text-align:center;">1 篇</td><td style="text-align:center;">□ 完成</td><td>今天發了什麼？互動狀況如何？</td></tr>
+      <tr><td class="label-cell">體驗邀約</td><td style="text-align:center;">1 位</td><td style="text-align:center;">□ 完成</td><td>邀請了誰？對方的回應是？</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">📌 <strong>使用建議：</strong>每天晚上花 10 分鐘填寫檢核表，並規劃明日行動。養成記錄習慣，讓自己清楚知道自己的業務狀態。數字不說謊，每天的記錄會告訴你業績的走向。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>12 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 13 — CH13 團隊訓練制度
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 13</div>
+  <div class="ch-title">團隊訓練制度</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">一個人走得快，一群人走得遠。建立系統化的團隊訓練制度，讓每一位夥伴都能複製你的成功模式，創造真正的槓桿效應。當你的團隊強大，你的業績也會跟著倍增。</p>
+
+  <div class="sec-title mt12">每週訓練項目</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
+    <div class="tip-card"><div class="tip-label" style="min-width:84px;font-size:8.5pt;">客戶開發</div><div class="tip-body">每週分享新的開發管道與心得，互相交流有效的名單來源與話術，讓整個團隊的開發能力持續提升。</div></div>
+    <div class="tip-card"><div class="tip-label blue" style="min-width:84px;font-size:8.5pt;">追蹤技巧</div><div class="tip-body">案例演練：如何在不同情境下跟進客戶，提升互動效率。透過真實案例討論，讓夥伴快速累積實戰經驗。</div></div>
+    <div class="tip-card"><div class="tip-label gold" style="min-width:84px;font-size:8.5pt;">話術演練</div><div class="tip-body gold-bg">角色扮演訓練，模擬真實對話場景，強化應對能力與信心。演練是最快提升話術熟練度的方法。</div></div>
+    <div class="tip-card"><div class="tip-label" style="min-width:84px;font-size:8.5pt;">AI 檢測</div><div class="tip-body">學習正確操作 AI 姿態檢測工具，能清楚解讀報告並向客戶說明，讓體驗環節更專業、更有說服力。</div></div>
+    <div class="tip-card"><div class="tip-label accent" style="min-width:84px;font-size:8.5pt;">成交演練</div><div class="tip-body accent-bg">從問需求、建立信任到促成體驗的完整流程演練，降低臨場失誤，提高成交轉化率。</div></div>
+    <div class="tip-card"><div class="tip-label blue" style="min-width:84px;font-size:8.5pt;">社群經營</div><div class="tip-body">分享有效的內容格式與發文策略，協助夥伴建立個人品牌，讓社群成為持續引流的無形資產。</div></div>
+  </div>
+
+  <div class="sec-title mt12">團隊文化建立</div>
+  <ul class="blist">
+    <li><strong>定期舉辦成果分享會：</strong>讓夥伴分享成功案例，互相激勵，打造積極向上的團隊氛圍。</li>
+    <li><strong>建立標準化新人訓練流程：</strong>讓新加入的夥伴有清楚的學習路徑，縮短上手時間。</li>
+    <li><strong>鼓勵分享失敗經驗：</strong>一起找解決方案，讓失敗成為全團隊的學習機會，而不是個人的挫折。</li>
+    <li><strong>打造「互相支持、共同成長」的氛圍：</strong>頂尖代理商不只是業績高手，更是讓夥伴願意跟隨的領導者。</li>
+  </ul>
+
+  <div class="note-box">💡 <strong>領導者思維：</strong>你的團隊強大，你才能真正自由。把時間投入在培育夥伴上，是最好的長期投資。</div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>13 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 14 — CH14 儲備幹部培育
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 14</div>
+  <div class="ch-title">儲備幹部培育</div>
+  <div class="ch-rule"></div>
+
+  <p class="body-text">業績成長到一定程度後，你的下一步是「培育幹部」。把你的成功模式複製給夥伴，才能真正實現時間與財務的自由。幹部不是天生的，而是被發現、被培育、被賦能的。</p>
+
+  <div class="sec-title mt12">儲備幹部三大能力</div>
+
+  <div class="row mt8">
+    <div class="col" style="text-align:center;">
+      <div style="background:var(--navy);color:white;padding:40px 20px 16px;border-radius:8px 8px 0 0;">
+        <div style="font-size:28pt;font-weight:900;color:#f0c96e;">能</div>
+        <div style="font-size:14pt;font-weight:700;">成交</div>
+      </div>
+      <div style="border:1px solid var(--border);border-top:none;padding:14px;border-radius:0 0 8px 8px;background:var(--bg);font-size:8.5pt;line-height:1.7;color:var(--text-muted);">熟練掌握 ABC 分類、追蹤節奏與成交技巧，能獨立完成完整的銷售流程，每月穩定達成個人 KPI。</div>
+    </div>
+    <div class="col" style="text-align:center;">
+      <div style="background:var(--blue);color:white;padding:40px 20px 16px;border-radius:8px 8px 0 0;">
+        <div style="font-size:28pt;font-weight:900;color:#f0c96e;">能</div>
+        <div style="font-size:14pt;font-weight:700;">帶人</div>
+      </div>
+      <div style="border:1px solid var(--border);border-top:none;padding:14px;border-radius:0 0 8px 8px;background:var(--bg);font-size:8.5pt;line-height:1.7;color:var(--text-muted);">具備教練思維，能夠耐心指導新人、協助解決問題、激勵夥伴成長，讓每個人都能發揮潛力。</div>
+    </div>
+    <div class="col" style="text-align:center;">
+      <div style="background:var(--accent);color:white;padding:40px 20px 16px;border-radius:8px 8px 0 0;">
+        <div style="font-size:28pt;font-weight:900;color:#f0c96e;">能</div>
+        <div style="font-size:14pt;font-weight:700;">複製</div>
+      </div>
+      <div style="border:1px solid var(--border);border-top:none;padding:14px;border-radius:0 0 8px 8px;background:var(--bg);font-size:8.5pt;line-height:1.7;color:var(--text-muted);">能把成功模式系統化地傳授給他人，讓每位新夥伴都能按照 SOP 快速上手，縮短成長曲線。</div>
+    </div>
+  </div>
+
+  <div class="sec-title mt12">儲備幹部培育路徑</div>
+  <div class="steps-list mt8">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>發現潛力夥伴</strong><p>觀察積極主動、樂於學習、有責任感的新人，主動關注與培育。</p></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>一對一輔導帶領</strong><p>每週固定 1 次 1:1 輔導，了解困難、給予方向、協助突破瓶頸。</p></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong>讓他開始帶新人</strong><p>當夥伴穩定成交後，鼓勵他開始帶領自己的第一個新人，實際演練領導能力。</p></div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong>賦予舞台與責任</strong><p>在團隊會議中讓他分享成果、帶領演練，建立信心與威信。</p></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong>正式升任幹部</strong><p>達到 KPI 標準並展現帶人能力後，正式授予幹部職位，賦予相應的職責與榮耀。</p></div></div>
+  </div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>14 / 15</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 15 — CH15 KPI + 核心精神
+════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header-bar"></div>
+
+  <div class="ch-number">Chapter 15</div>
+  <div class="ch-title">頂尖代理商 KPI 與核心精神</div>
+  <div class="ch-rule"></div>
+
+  <div class="sec-title">每月目標指標</div>
+  <table class="kpi-table mt8">
+    <thead><tr><th>指標項目</th><th style="width:100px;">每月目標</th><th>執行說明</th></tr></thead>
+    <tbody>
+      <tr><td class="label-cell">新名單累積</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--navy);">100 位</td><td>每天平均 3～4 位，持續累積人脈資料庫</td></tr>
+      <tr><td class="label-cell">AI 姿態檢測</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--navy);">30 位</td><td>讓潛在客戶直接感受產品價值，是最有效的破冰工具</td></tr>
+      <tr><td class="label-cell">體驗人數</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--navy);">20 位</td><td>完整體驗是最有效的成交前置，目標達成率 67%</td></tr>
+      <tr><td class="label-cell">成交人數</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--accent);">10 位</td><td>維持 50% 體驗成交率，持續優化成交話術</td></tr>
+      <tr><td class="label-cell">轉介紹人數</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--accent);">5 位</td><td>至少 50% 的成交客戶貢獻轉介，讓口碑持續發酵</td></tr>
+      <tr><td class="label-cell">新代理招募</td><td style="text-align:center;font-size:11pt;font-weight:900;color:var(--gold);">2 位</td><td>每月持續培育潛在夥伴加入團隊，擴大槓桿效應</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title mt12">最重要的核心精神</div>
+
+  <div class="final-compare mt8">
+    <div class="final-card ordinary">
+      <div class="fc-label">普通代理商</div>
+      <div class="fc-value">只想賣產品</div>
+      <div style="margin-top:10px;font-size:8pt;color:#94a3b8;line-height:1.6;">只關注單次成交<br>靠衝動與技巧推銷<br>客戶流失率高</div>
+    </div>
+    <div class="final-card top">
+      <div class="fc-label">頂尖代理商</div>
+      <div class="fc-value">懂得經營人與信任</div>
+      <div style="margin-top:10px;font-size:8pt;color:rgba(255,255,255,0.7);line-height:1.6;">建立長期客戶關係<br>客戶主動回購轉介<br>業績持續穩定成長</div>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,var(--navy),#2c5f8a);padding:22px 28px;border-radius:10px;text-align:center;margin-top:14px;">
+    <div style="font-family:'Noto Serif TC',serif;font-size:14pt;font-weight:900;color:#f0c96e;line-height:1.6;margin-bottom:8px;">
+      「真正長久的事業，<br>不是靠強迫成交，<br>而是靠持續經營信任。」
+    </div>
+    <div style="font-size:8.5pt;color:rgba(255,255,255,0.5);margin-top:8px;">── 蓓姿媞代理商培訓系列</div>
+  </div>
+
+  <div class="page-footer"><span>蓓姿媞代理商培訓系列</span><span>15 / 15</span></div>
+</div>
+
+</body>
+</html>
